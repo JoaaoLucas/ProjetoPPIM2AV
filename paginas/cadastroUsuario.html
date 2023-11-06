@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <style>label{ font-weight: 600};</style>
 </head>
 <body>
-    <div class="container">
-        <form  action='/cadastrarUsuario' method="GET"  class="row g-3 needs-validation" novalidate>
-        <fieldset class="border p-2 mt-2">
-            <legend class="mb-3">Cadastro de Usuário</legend>
-            <div class="col-md-4">
+    <div class="container col-6" style="padding: 30px;">
+        <form action='/cadastrarUsuario' method="GET"  class="row col-12 needs-validation mx-auto my-auto" novalidate>
+        <fieldset class="border border-secondary rounded-2 p-2 mt-2">
+            <legend class="mb-3 text-success text-center" style="font-weight: 700;">Cadastro de Voluntarios ONG <span style="color: orange;">AuMigos</span></legend>
+            <div class="col-md-6 ">
               <label for="nome" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" name="nome" required>
               <div class="invalid-feedback">
                 Por favor, informe seu nome!
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6 mt-2">
               <label for="sobrenome" class="form-label">Sobrenome</label>
               <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
               <div class="invalid-feedback">
                 Por favor, informe seu sobrenome!
               </div>
             </div>
-            <div class="col-md-4">
-              <label for="nomeUsuario" class="form-label">Nome do usuário</label>
+            <div class="col-md-6 mt-2">
+              <label for="nomeUsuario" class="form-label">Nome de usuário</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="nomeUsuario">@</span>
                 <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" aria-describedby="inputGroupPrepend" required>
@@ -36,15 +36,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            
+            <div class="col-md-6 mt-2">
               <label for="cidade" class="form-label">Cidade</label>
               <input type="text" class="form-control" id="cidade" name="cidade" required>
               <div class="invalid-feedback">
                 Por favor, Informe a sua cidade!
               </div>
             </div>
-            <div class="col-md-3">
-              <label for="uf" class="form-label">UF</label>
+            <div class="col-md-5 mt-2">
+              <label for="uf" class="form-label">Estado</label>
               <select class="form-select" id="uf" name="uf" required>
                 <option selected disabled value="">Escolha um estado...</option>
                 <option value="AC">Acre</option>
@@ -77,19 +78,35 @@
                 <option value="EX">Estrangeiro</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid state.
+                Por favor, informe o estado!
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mt-2">
               <label for="cep" class="form-label">CEP</label>
               <input type="text" class="form-control" id="cep" name="cep" required>
               <div class="invalid-feedback">
                 Por favor, informe seu cep!
               </div>
             </div>
+            <div class="col-md-5 mt-2">
+              <label for="contribuicao" class="form-label">Contribuição: </label>
+              <select class="form-select" id="contribuicao" name="contribuicao" required>
+                <option selected disabled value="">Escolha uma contribuição...</option>
+                <option value="Alimentação e Hidratação">Alimentação e Hidratação</option>
+                <option value="Passeios e Exercícios">Passeios e Exercícios</option>
+                <option value="Limpeza e Higiene">Limpeza e Higiene</option>
+                <option value="Cuidados Médicos Básicos">Cuidados Médicos Básicos</option>
+                <option value="Treinamento Básico">Treinamento Básico</option>
+                <option value="Apoio Emocional">Apoio Emocional</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor, informe a contribuição!
+              </div>
+            </div>
+
            
-            <div class="col-12 mt-2">
-              <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <div class="col-12 mt-4">
+              <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
           </fieldset>
           </form>

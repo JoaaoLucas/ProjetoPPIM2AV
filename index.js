@@ -13,6 +13,7 @@ function processarCadastroUsuario(requisicao, reposta){
         cidade: requisicao.query.cidade,
         uf: requisicao.query.uf,
         cep: requisicao.query.cep,
+        contribuicao: requisicao.query.contribuicao,
     } 
     listaUsuarios.push(usuario);
 
@@ -26,8 +27,8 @@ function processarCadastroUsuario(requisicao, reposta){
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         </head>
         <body>
-            <h1>Lista de usuários cadastrados</h1>
-            <table class="table table-striped table-hover">
+            <h1 class="text-success text-center" style="font-weight: 700; text-decoration: underline">Lista de voluntários cadastrados</h1>
+            <table class="table table-striped table-hover mt-2">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -35,6 +36,7 @@ function processarCadastroUsuario(requisicao, reposta){
                         <th>Nome de Usuário</th>
                         <th>Cidade/UF</th>
                         <th>CEP</th>
+                        <th>Contribuição</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +50,7 @@ function processarCadastroUsuario(requisicao, reposta){
                             <td>${usuario.nomeUsuario}</td>
                             <td>${usuario.cidade}/${usuario.uf}</td>
                             <td>${usuario.cep}</td>
+                            <td>${usuario.contribuicao}</td>
                         <tr>
                     `;
                 }
@@ -55,8 +58,8 @@ function processarCadastroUsuario(requisicao, reposta){
                 conteudoResposta += `
                             </tbody>
                         </table>
-                        <a class="btn btn-primary" href="/" role"button"> Voltar ao menu </a>
-                        <a class="btn btn-primary" href="/cadastroUsuario.html" role"button"> Continuar cadastrando </a>
+                        <a class="btn btn-danger" href="/" role"button"> Voltar </a>
+                        <a class="btn btn-success" href="/cadastroUsuario.html" role"button"> Cadastrar mais voluntarios </a>
                     </body>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script
                     </html>
@@ -77,11 +80,18 @@ app.get('/', (requisicao, reposta) =>{
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Menu do Sistema</title>
+            <style>
+                *{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+                a {font-size: 20px;
+                    text-decoration: none;
+                    color: blue;
+                    font-weight: 700;}
+            </style>
         </head>
         <body>
-            <h1>Menu</h1>
+            <h1>ACESSE AQUI A TELA DE CADASTRO DE VOLUNTARIOS DA ONG AUMIGOS</h1>
             <ul>
-                <li><a href="/cadastroUsuario.html">Cadastrar Usuario</a></li>
+                <li><a href="/cadastroUsuario.html">Formulario de cadastro de voluntarios</a></li>
             </ul>
         </body>
         `);
