@@ -70,7 +70,6 @@ function processarCadastroUsuario(requisicao, reposta){
 
 const app = express();
 
-//indicando para a aplicação como servir arquivos estáticos localizados na pasta 'paginas'
 app.use(express.static(path.join(process.cwd(),'paginas')));
 
 app.get('/', (requisicao, reposta) =>{
